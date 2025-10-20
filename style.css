@@ -1,3 +1,4 @@
+/* 🌸 Cấu hình cơ bản */
 body {
   background-color: #ffeef2;
   display: flex;
@@ -6,12 +7,15 @@ body {
   height: 100vh;
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
   position: relative;
+  max-width: 100%;
 }
 
+/* ✉️ Phong bì */
 .envelope {
   width: 400px;
   height: 260px;
@@ -22,6 +26,7 @@ body {
   cursor: pointer;
   transition: all 0.6s ease;
   overflow: hidden;
+  margin: auto;
 }
 
 .envelope.open {
@@ -29,6 +34,7 @@ body {
   transition: height 1s ease;
 }
 
+/* Nắp thư */
 .flap {
   position: absolute;
   top: 0;
@@ -45,12 +51,13 @@ body {
   transform: rotateX(180deg);
 }
 
+/* Thân thư */
 .letter {
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  height: 460px; /* đủ để chứa text + ảnh */
+  height: 460px;
   background: #fff6f8;
   border-radius: 12px;
   padding: 18px;
@@ -94,7 +101,7 @@ body {
   box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
 }
 
-/* Tùy chỉnh thanh cuộn */
+/* Thanh cuộn */
 .text-box::-webkit-scrollbar {
   width: 6px;
 }
@@ -106,6 +113,7 @@ body {
   background: #fff6f8;
 }
 
+/* Ảnh trong thư */
 .letter img {
   margin-top: 10px;
   width: 85%;
@@ -122,7 +130,6 @@ body {
   margin-top: 10px;
   font-size: 16px;
 }
-
 
 /* --- Ảnh xung quanh bức thư --- */
 .photo {
@@ -179,7 +186,7 @@ body {
   z-index: 3;
 }
 
-/* --- Hiệu ứng xuất hiện trễ dần từng ảnh --- */
+/* --- Hiệu ứng xuất hiện trễ --- */
 .open .photo:nth-child(1) { transition-delay: 0.2s; }
 .open .photo:nth-child(2) { transition-delay: 0.4s; }
 .open .photo:nth-child(3) { transition-delay: 0.6s; }
@@ -192,4 +199,85 @@ body {
   z-index: 1;
 }
 
+/* 🌸 Responsive cho điện thoại */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 20px 0;
+  }
 
+  .envelope {
+    width: 90%;
+    height: 200px;
+  }
+
+  .envelope.open {
+    height: 520px;
+  }
+
+  .flap {
+    height: 110px;
+  }
+
+  .letter {
+    height: auto;
+    padding: 15px;
+  }
+
+  .letter h3 {
+    font-size: 18px;
+  }
+
+  .letter p {
+    font-size: 14px;
+  }
+
+  .text-box {
+    height: 150px;
+  }
+
+  /* Ảnh xung quanh nhỏ và gần hơn */
+  .photo {
+    width: 85px;
+  }
+
+  .photo-top-left {
+    top: -60px;
+    left: -100px;
+  }
+
+  .photo-top-right {
+    top: -60px;
+    right: -100px;
+  }
+
+  .photo-bottom-left {
+    bottom: 40px;
+    left: -100px;
+  }
+
+  .photo-bottom-right {
+    bottom: 40px;
+    right: -100px;
+  }
+
+  .photo-center-bottom {
+    bottom: -100px;
+  }
+}
+
+/* 🌸 Responsive cho màn hình nhỏ hơn 480px (điện thoại mini) */
+@media (max-width: 480px) {
+  .envelope {
+    width: 95%;
+  }
+
+  .photo {
+    width: 65px;
+  }
+
+  .photo-top-left { left: -70px; top: -50px; }
+  .photo-top-right { right: -70px; top: -50px; }
+  .photo-bottom-left { left: -70px; bottom: 20px; }
+  .photo-bottom-right { right: -70px; bottom: 20px; }
+}
