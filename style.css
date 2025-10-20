@@ -266,7 +266,7 @@ body {
   }
 }
 
-/* 🌸 Responsive cho màn hình nhỏ hơn 480px (điện thoại mini) */
+/* 🌸 Responsive cho màn hình nhỏ hơn 480px (điện thoại mini)
 @media (max-width: 480px) {
   .envelope {
     width: 95%;
@@ -280,4 +280,4 @@ body {
   .photo-top-right { right: -70px; top: -50px; }
   .photo-bottom-left { left: -70px; bottom: 20px; }
   .photo-bottom-right { right: -70px; bottom: 20px; }
-}
+} */
