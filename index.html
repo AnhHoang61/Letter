@@ -5,6 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> 💌</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Responsive trực tiếp trong HTML để bạn dễ test trên GitHub Pages */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+      }
+
+      .envelope {
+        width: 90%;
+        height: 200px;
+      }
+
+      .envelope.open {
+        height: 480px;
+      }
+
+      .letter {
+        height: 360px;
+        padding: 12px;
+      }
+
+      .letter h3 {
+        font-size: 16px;
+      }
+
+      .letter p {
+        font-size: 14px;
+      }
+
+      .letter img {
+        width: 95%;
+        max-height: 180px;
+      }
+
+      /* Giảm kích thước và vị trí ảnh xung quanh */
+      .photo {
+        width: 70px;
+        opacity: 0;
+      }
+
+      .photo-top-left {
+        top: -70px;
+        left: -120px;
+      }
+
+      .photo-top-right {
+        top: -70px;
+        right: -120px;
+      }
+
+      .photo-bottom-left {
+        bottom: 40px;
+        left: -100px;
+      }
+
+      .photo-bottom-right {
+        bottom: 40px;
+        right: -100px;
+      }
+
+      .photo-center-bottom {
+        bottom: -90px;
+        transform: translateX(-50%) rotate(4deg) scale(0.9);
+      }
+
+      .center-text {
+        font-size: 14px;
+      }
+
+      .text-box {
+        height: 150px;
+      }
+    }
+
+    /* Dưới 480px (điện thoại nhỏ hơn) */
+    @media (max-width: 480px) {
+      .envelope {
+        width: 95%;
+        height: 180px;
+      }
+
+      .envelope.open {
+        height: 420px;
+      }
+
+      .photo {
+        width: 60px;
+      }
+
+      .text-box {
+        height: 130px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
